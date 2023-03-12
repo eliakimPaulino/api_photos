@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print
+
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
@@ -10,11 +12,11 @@ class PhotosRepository {
       : _httpClient = httpClient ?? http.Client();
 
   static const String _unsplashBaseUrl = 'https://api.unsplash.com';
-  static const int numPerPage = 1;
+  static const int numPerPage = 10;
 
   Future<List<Photo>> searchPhotos({
     required String query,
-    int page = 10,
+    int page = 1,
   }) async {
     try {
       final url =

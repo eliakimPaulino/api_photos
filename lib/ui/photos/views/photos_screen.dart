@@ -29,7 +29,7 @@ class _PhotosViewState extends State<PhotosView> {
       onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
         appBar: AppBar(
-          title: const Text('Photos'),
+          title: const Center(child: Text('Photos')),
         ),
         body: Column(
           children: [
@@ -55,7 +55,7 @@ class _PhotosViewState extends State<PhotosView> {
                 builder: (context, snapshot) {
                   if (snapshot.connectionState == ConnectionState.done) {
                     final photos = snapshot.data ?? [];
-                    debugPrint(photos.toString());
+                    // debugPrint(photos.toString());
                     return GridView.builder(
                       padding: const EdgeInsets.all(20),
                       gridDelegate:
@@ -63,7 +63,7 @@ class _PhotosViewState extends State<PhotosView> {
                         mainAxisSpacing: 15.0,
                         crossAxisSpacing: 15.0,
                         crossAxisCount: 2,
-                        childAspectRatio: 0.5,
+                        childAspectRatio: 0.8,
                       ),
                       itemCount: photos.length,
                       itemBuilder: (context, index) {

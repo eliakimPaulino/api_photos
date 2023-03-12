@@ -1,7 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import '../../../models/photo_model.dart';
-// import '../views/photo_viewer_screen.dart';
+import '../views/photo_viewer_screen.dart';
 
 class PhotoCard extends StatelessWidget {
   const PhotoCard(
@@ -17,14 +17,14 @@ class PhotoCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return 
-    // GestureDetector(
-    //   onTap: () => Navigator.of(context).push(
-    //     MaterialPageRoute(
-    //       builder: (_) =>
-    //           PhotoViewerScreen(photos: photos, currentIndex: index),
-    //     ),
-    //   ),
-    //   child: 
+    GestureDetector(
+      onTap: () => Navigator.of(context).push(
+        MaterialPageRoute(
+          builder: (_) =>
+              PhotoViewerScreen(photos: photos, currentIndex: index),
+        ),
+      ),
+      child: 
       Container(
         decoration: BoxDecoration(
           color: Colors.grey[50],
@@ -41,7 +41,7 @@ class PhotoCard extends StatelessWidget {
             fit: BoxFit.cover,
           ),
         ),
-      // ),
+      ),
     );
   }
 }
