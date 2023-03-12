@@ -10,11 +10,11 @@ class PhotosRepository {
       : _httpClient = httpClient ?? http.Client();
 
   static const String _unsplashBaseUrl = 'https://api.unsplash.com';
-  static const int numPerPage = 1;
+  static const int numPerPage = 10;
 
   Future<List<Photo>> searchPhotos({
     required String query,
-    int page = 10,
+    int page = 1,
   }) async {
     try {
       final url =
