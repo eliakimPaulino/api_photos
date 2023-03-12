@@ -22,7 +22,7 @@ class User extends Equatable {
     return User(
       id: map['id'],
       name: map['name'],
-      profileImageUrl: map['profileImageUrl']['small'],
+      profileImageUrl: map['profile_image']['small'],
       profileUrl: map['links']['html'],
     );
   }
